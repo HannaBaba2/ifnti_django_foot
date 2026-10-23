@@ -15,7 +15,7 @@ def equipe2(db):
 @pytest.fixture
 def match_non_joue(db,equipe1,equipe2):
     return Match.objects.create(equipe_visiteuse=equipe2, equipe_domicile=equipe1,date="2020-01-01", status="EN_ATTENTE")
-
+@pytest.fixture
 def match_joue(db,equipe1,equipe2):
     return Match.objects.create(equipe_visiteuse=equipe2, equipe_domicile=equipe1,date="2020-01-01", status="JOUE")
 
@@ -51,3 +51,7 @@ def test_afficher_match_non_joue(match_non_joue):
     
 def test_afficher_match_joue(match_joue):
     assert str(match_joue) == "Equipe A : 3-1"
+    
+    
+    
+    
