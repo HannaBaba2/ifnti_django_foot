@@ -16,13 +16,20 @@ def test_equipe_un_nom_promo(db ,equipe:equipe1):
     assert equipe.promo 
     
 @pytest.fixture
-def equipe1():
+def equipe1(db):
     return Equipe.objects.create(nom="Equipe A", promo="L1")
 
 @pytest.fixture
-def equipe2():
+def equipe2(db):
     return Equipe.objects.create(nom="Equipe B", promo="L2")
 
 def test_equipe_un_nom_promo(equipe1):
     assert equipe1.nom
     assert equipe1.promo 
+
+
+def test_pas_equipe_avec_meme_nom(equipe1):
+  equipe1=equipe1
+  with pytest.raises(Exception):
+        Equipe.objects.create(nom="Equipe A", promo="L2")
+        
