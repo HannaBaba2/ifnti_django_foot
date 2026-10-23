@@ -36,7 +36,7 @@ def test_afficher_equipe(equipe1):
     assert str(equipe1) == "Equipe A"   
     
     
-def test_match_equipe_visiteuse_domicile(match):
+def test_match_equipe_visiteuse_domicile(match,equipe1,equipe2):
  
     assert match.equipe_visiteuse == equipe2
     assert match.equipe_domicile == equipe1
@@ -51,6 +51,7 @@ def test_afficher_match_non_joue(match_non_joue):
     
 def test_afficher_match_joue(match_joue):
     assert str(match_joue) == "Equipe A : 3-1"
+    
     
     
     
