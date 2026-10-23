@@ -14,3 +14,7 @@ def equipe2(db):
 def test_equipe_un_nom_promo(equipe1):
     assert equipe1.nom
     assert equipe1.promo 
+    
+def test_pas_equipe_avec_meme_nom( equipe1):
+    with pytest.raises(Exception):
+        Equipe.objects.create(nom="Equipe A", promo="L2")
