@@ -26,6 +26,10 @@ class Match(models.Model):
     score_domicile = models.IntegerField(null=True, blank=True)
     score_visiteuse = models.IntegerField(null=True, blank=True)
 
+
+    class Meta:
+        ordering = ['date']
+ 
     @property
     def score(self):
         if self.score_domicile is None or self.score_visiteuse is None:
