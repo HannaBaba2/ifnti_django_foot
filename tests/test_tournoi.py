@@ -24,7 +24,7 @@ def test_afficher_equipe(equipe1):
     
     
 def test_match_equipe_visiteuse_domicile(equipe1 ,equipe2):
-    match = Match.objects.create(equipe_visiteuse=equipe2, equipe_domicile=equipe1,date="14/01/2010")
+    match = Match.objects.create(equipe_visiteuse=equipe2, equipe_domicile=equipe1,date="2020-01-01")
     assert match.equipe_visiteuse == equipe2
     assert match.equipe_domicile == equipe1
     assert match.date
