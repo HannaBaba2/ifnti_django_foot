@@ -56,3 +56,11 @@ def test_afficher_match_joue(match_joue):
     
     
     
+    
+    def test_liste_matchs_ordonnee_ancien_au_recent(db, match_non_joue, match_joue):
+            url = reverse('liste_matchs') 
+            response = client.get(url)
+            assert response.status_code == 200
+            matchs_affiches = list(response.context['matchs']) # Ou le nom de variable utilisé dans votre contexte
+            assert len(matchs_affiches) == 2
+            assert matchs_affiches[0].date <= matchs_affiches[1].date
