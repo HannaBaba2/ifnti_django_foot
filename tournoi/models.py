@@ -6,4 +6,4 @@ class Equipe(models.Model):
     promo = models.CharField(max_length=120)
 
     def __str__(self):
-        return f"{self.nom} ({self.promo})"
+        return f"{self.nom}"
